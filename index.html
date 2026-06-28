@@ -6,14 +6,13 @@
       /* Global Styles */
       body {
         background-color: #E6F0E6; 
-        color: #2c3e50; /* A soft dark blue/gray for readable, elegant text */
+        color: #2c3e50; 
         font-family: 'Garamond', serif;
-        text-align: center; /* Centers all text for a formal look */
+        text-align: center; 
         margin: 0;
         padding: 0;
       }
       
-      /* Keeps content from stretching too wide on large screens */
       .container {
         max-width: 800px;
         margin: 0 auto;
@@ -28,8 +27,9 @@
       
       h2 {
         font-size: 32px;
-        margin-top: 50px;
-        border-bottom: 1px solid #2c3e50;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid currentColor;
         padding-bottom: 10px;
         display: inline-block;
       }
@@ -39,15 +39,44 @@
         line-height: 1.6;
       }
 
+      /* Elegant Divider Line */
+      hr.elegant-line {
+        border: 0;
+        height: 1px;
+        /* Creates a line that fades out at the edges */
+        background-image: linear-gradient(to right, rgba(44, 62, 80, 0), rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0));
+        margin: 40px 0;
+      }
+
       /* Invitation Image Styling */
       .invite-img {
-        max-width: 100%;
-        max-width: 500px;
+        width: 60%; 
+        max-width: 500px; 
         height: auto;
-        display: block;
-        margin: 40px 0;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Adds a nice drop shadow */
+        display: inline-block; 
+        margin: 20px 0 50px 0; 
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
         border-radius: 4px;
+      }
+
+      /* Dark Highlight Boxes */
+      .highlight-box {
+        background-color: #4A5D4E; /* Deep elegant green */
+        color: #FDFBF7; /* Soft cream text for high contrast */
+        padding: 40px 20px;
+        border-radius: 12px; /* Soft rounded corners */
+        margin: 40px 0;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Slight 3D shadow effect */
+      }
+
+      /* Adjusts the links/buttons specifically inside the dark boxes */
+      .highlight-box a.rsvp-btn {
+        background-color: #FDFBF7;
+        color: #4A5D4E;
+      }
+
+      .highlight-box a.rsvp-btn:hover {
+        background-color: #E6F0E6;
       }
 
       /* Itinerary Layout */
@@ -64,18 +93,13 @@
       /* RSVP Button */
       .rsvp-btn {
         display: inline-block;
-        background-color: #2c3e50;
-        color: #E6F0E6;
         padding: 15px 30px;
         text-decoration: none;
         font-size: 20px;
         margin-top: 20px;
         border-radius: 5px;
         transition: background-color 0.3s;
-      }
-      
-      .rsvp-btn:hover {
-        background-color: #1a252f;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -87,31 +111,38 @@
       <p>October 17, 2026 | Montreal, QC</p>
       <p>We are thrilled to celebrate our special day with you. Welcome to our wedding website!</p>
       
+      <!-- ELEGANT DIVIDER -->
+      <hr class="elegant-line">
+
       <!-- INVITATION IMAGE -->
       <img src="invitation.png" alt="Wedding Invitation" class="invite-img">
 
-      <!-- ITINERARY SECTION -->
-      <h2>Schedule of Events</h2>
-      
-      <div class="itinerary-item">
-        <p class="time">3:00 PM - The Ceremony</p>
-        <p><strong>Church of Saint-Léon-de-Westmount</strong><br>
-        4311 Boul. Maisonneuve W., Montreal, QC H3Z 1L1</p>
+      <!-- ITINERARY HIGHLIGHT BOX -->
+      <div class="highlight-box">
+        <h2>Schedule of Events</h2>
+        
+        <div class="itinerary-item">
+          <p class="time">3:00 PM - The Ceremony</p>
+          <p><strong>Church of Saint-Léon-de-Westmount</strong><br>
+          4311 Boul. Maisonneuve W., Montreal, QC H3Z 1L1</p>
+        </div>
+
+        <div class="itinerary-item">
+          <p class="time">5:00 PM - The Reception</p>
+          <p><strong>Rita Restaurant</strong><br>
+          3681 Wellington Street, Verdun, QC H4G 1V1</p>
+        </div>
       </div>
 
-      <div class="itinerary-item">
-        <p class="time">5:00 PM - The Reception</p>
-        <p><strong>Rita Restaurant</strong><br>
-        3681 Wellington Street, Verdun, QC H4G 1V1</p>
+      <!-- RSVP HIGHLIGHT BOX -->
+      <div class="highlight-box">
+        <h2>RSVP</h2>
+        <p>Please kindly respond by September 1st, 2026.</p>
+        <p>You can let us know if you can make it, and note any dietary restrictions, by clicking the button below.</p>
+        
+        <!-- Replace the '#' with your Google Form URL later -->
+        <a href="#" class="rsvp-btn">Click Here to RSVP</a>
       </div>
-
-      <!-- RSVP & FORMS SECTION -->
-      <h2>RSVP</h2>
-      <p>Please kindly respond by September 1st, 2026.</p>
-      <p>You can let us know if you can make it, and note any dietary restrictions, by clicking the button below.</p>
-      
-      <!-- Replace the '#' with your Google Form URL later -->
-      <a href="#" class="rsvp-btn">Click Here to RSVP</a>
 
     </div>
   </body>
