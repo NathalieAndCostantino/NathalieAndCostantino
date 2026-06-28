@@ -23,6 +23,7 @@
       h1 {
         font-size: 48px;
         margin-bottom: 5px;
+        color: #4A5D4E;
       }
       
       h2 {
@@ -37,6 +38,7 @@
       p {
         font-size: 18px;
         line-height: 1.6;
+        color: #4A5D4E;
       }
 
       /* Elegant Divider Line */
@@ -109,26 +111,30 @@
       <!-- WELCOME SECTION -->
       <h1>Nathalie & Costantino</h1>
       <p>October 17, 2026 | Montreal, QC</p>
+      <div id="wedding-countdown" style="font-family: 'Garamond', serif; font-size: 24px; margin: 20px 0;">
+          Days until we say "I do!": <span id="days"></span>
+      </div>
       <p>We are thrilled to celebrate our special day with you. Welcome to our wedding website!</p>
       
-      <!-- ELEGANT DIVIDER -->
       <hr class="elegant-line">
 
       <!-- INVITATION IMAGE -->
       <img src="invitation.png" alt="Wedding Invitation" class="invite-img">
+
+      <hr class="elegant-line">
 
       <!-- ITINERARY HIGHLIGHT BOX -->
       <div class="highlight-box">
         <h2>Schedule of Events</h2>
         
         <div class="itinerary-item">
-          <p class="time">3:00 PM - The Ceremony</p>
+          <p class="time">3:00 PM - Ceremony</p>
           <p><strong>Church of Saint-Léon-de-Westmount</strong><br>
           4311 Boul. Maisonneuve W., Montreal, QC H3Z 1L1</p>
         </div>
 
         <div class="itinerary-item">
-          <p class="time">5:00 PM - The Reception</p>
+          <p class="time">5:00 PM - Reception</p>
           <p><strong>Rita Restaurant</strong><br>
           3681 Wellington Street, Verdun, QC H4G 1V1</p>
         </div>
@@ -141,9 +147,31 @@
         <p>You can let us know if you can make it, and note any dietary restrictions, by clicking the button below.</p>
         
         <!-- Replace the '#' with your Google Form URL later -->
-        <a href="#" class="rsvp-btn">Click Here to RSVP</a>
+        <a href="https://forms.gle/pxwdEX9T8Hp49WKD9" class="rsvp-btn">Click Here to RSVP</a>
       </div>
 
     </div>
   </body>
+  <script>
+    // Set the date we are counting down to (October 17, 2026)
+    const weddingDate = new Date("Oct 17, 2026 15:00:00").getTime();
+  
+    // Update the count every 1 second
+    const countdownFunction = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+  
+      // Calculate days
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  
+      // Display the result
+      document.getElementById("days").innerHTML = days + " days";
+  
+      // If the countdown is finished, write some text
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("wedding-countdown").innerHTML = "The wedding day is here!";
+      }
+    }, 1000);
+  </script>  
 </html>
