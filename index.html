@@ -3,10 +3,24 @@
   <head>
     <title>Nathalie & Costantino's Wedding</title>
     <style>
+      /* ========================================= */
+      /* COLOR PALETTE (Change colors here!)       */
+      /* ========================================= */
+      :root {
+        --page-bg: #5E4C3B;             
+        --text-dark: #000000;       
+        --text-color: #FDFBF7;
+        --box-color: #8f8073;        
+        --accent-rgb: 82, 98, 65;
+        --box-text: #FDFBF7;           
+        --button-hover: #E6F0E6;       
+        --icon-color: #ffffff;          
+      }
+
       /* Global Styles */
       body {
-        background-color: #E6F0E6; 
-        color: #2c3e50; 
+        background-color: var(--page-bg); 
+        color: var(--text-dark); 
         font-family: 'Palatino', serif;
         text-align: center; 
         margin: 0;
@@ -23,7 +37,7 @@
       h1 {
         font-size: 54px;
         margin-bottom: 5px;
-        color: #4A5D4E;
+        color: var(--text-color);
       }
       
       h2 {
@@ -38,19 +52,26 @@
       p {
         font-size: 18px;
         line-height: 1;
-        color: #4A5D4E;
+        color: var(--text-color);
       }
 
-      .opener{
+      .opener {
         font-size: 22px;
+      }
+
+      #wedding-countdown {
+        font-family: 'Garamond', serif; 
+        font-size: 22px; 
+        margin: 20px 0; 
+        color: var(--text-color);
       }
 
       /* Elegant Divider Line */
       hr.elegant-line {
         border: 0;
         height: 1px;
-        /* Creates a line that fades out at the edges */
-        background-image: linear-gradient(to right, rgba(44, 62, 80, 0), rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0));
+        /* Uses the RGB variable to create a line that fades out at the edges */
+        background-image: linear-gradient(to right, rgba(var(--accent-rgb), 0), rgba(var(--accent-rgb), 0.5), rgba(var(--accent-rgb), 0));
         margin: 40px 0;
       }
 
@@ -67,25 +88,26 @@
 
       /* Dark Highlight Boxes */
       .highlight-box {
-        background-color: #4A5D4E; /* Deep elegant green */
-        color: #FDFBF7; /* Soft cream text for high contrast */
+        background-color: var(--box-color); 
+        color: var(--box-text); 
         padding: 30px 20px;
-        border-radius: 12px; /* Soft rounded corners */
+        border-radius: 12px; 
         margin: 40px 0;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Slight 3D shadow effect */
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
       }
+      
       .highlight-box p {
-        color: #FDFBF7;
+        color: var(--box-text);
       }
 
       /* Adjusts the links/buttons specifically inside the dark boxes */
       .highlight-box a.rsvp-btn {
-        background-color: #FDFBF7;
-        color: #4A5D4E;
+        background-color: var(--box-text);
+        color: var(--box-color);
       }
 
       .highlight-box a.rsvp-btn:hover {
-        background-color: #E6F0E6;
+        background-color: var(--button-hover);
       }
 
       /* Itinerary Layout */
@@ -108,19 +130,19 @@
       .address {
         display: flex;
         align-items: center;
-        justify-content: center; /* Assumes your text is centered like in the image */
-        gap: 8px; /* Adds a little space between the address and the icon */
+        justify-content: center; 
+        gap: 8px; 
       }
 
       .map-icon-link {
-        color: #ffffff; /* Matches your white text */
+        color: var(--icon-color); 
         display: inline-flex;
         align-items: center;
         transition: opacity 0.2s ease;
       }
 
       .map-icon-link:hover {
-        opacity: 0.7; /* Gentle fade effect when hovered */
+        opacity: 0.7; 
       }
 
       /* RSVP Button */
@@ -142,9 +164,11 @@
       <!-- WELCOME SECTION -->
       <h1>Nathalie & Costantino</h1>
       <p class="opener">October 17, 2026 | Montreal, QC</p>
-      <div id="wedding-countdown" style="font-family: 'Garamond', serif; font-size: 22px; margin: 20px 0; color: #4A5D4E;">
+      
+      <div id="wedding-countdown">
           <span id="days"></span> until we say "I do!"
       </div>
+      
       <p class="opener">We are thrilled to celebrate our special day with you!</p>
       
       <hr class="elegant-line">
